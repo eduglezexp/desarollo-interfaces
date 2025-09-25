@@ -5,3 +5,13 @@
  * Llama a esa funcion pasándole una funcion anonima 
  * que imprima en consola "Boton pulsado".
  */
+
+void onPressed(void Function() callback) {
+  callback();
+}
+
+void main() {
+  onPressed(() {
+    print("Boton pulsado");
+  });
+}

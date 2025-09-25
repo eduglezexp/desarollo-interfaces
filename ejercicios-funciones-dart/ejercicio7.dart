@@ -6,5 +6,7 @@
 
 void main() {
   List<String> nombres = ['Alberto','Antonio', 'Daniel', 'Sara', 'Pepe'];
-  
+  nombres.forEach((nombre) {
+    print(nombre.toUpperCase());
+  });
 }
