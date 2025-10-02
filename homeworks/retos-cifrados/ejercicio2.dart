@@ -19,7 +19,18 @@
  * ¿Cuál es el mensaje original? 
  */
 
-String descodificador() {
-  
-  return "";
+String descodificador(String codigo) {
+  return String.fromCharCodes(
+    codigo.codeUnits.map((n) {
+      if ((n >= 65 && n <= 90) || (n >= 97 && n <= 122)) {
+        return n - 3;
+      }
+      return n;
+    })
+  );
+}
+
+void main() {
+  String codigo = "Zlqjduglxp#Ohylrvd";
+  print(descodificador(codigo));
 }
