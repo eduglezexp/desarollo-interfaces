@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 /**
  * Ejercicio 1: List – Lista de notas
  * Crea una lista con las notas de 5 alumnos.
@@ -74,7 +76,13 @@ void mostrarProductos(Map<String, double> productos) {
  * Usa addAll y removeFirst.
  */
 
-
+bool aniadirTareas(Queue<String> tareas, String nuevaTarea) {
+  if (tareas.contains(nuevaTarea)) {
+    return false;
+  }
+  tareas.add(nuevaTarea);
+  return true;
+}
 
 /**
  * Ejercicio 5: SplayTreeSet – Números ordenados
@@ -85,6 +93,11 @@ void mostrarProductos(Map<String, double> productos) {
  * - Imprime el conjunto final.
  * Usa addAll y remove.
  */
+
+SplayTreeSet<int> aniadirNumeros(SplayTreeSet<int> numeros, List<int> nuevosNumeros) {
+  numeros.addAll(nuevosNumeros);
+  return numeros;
+}
 
 void main() {
   print('-----Ejercicio 1-----');
@@ -106,5 +119,16 @@ void main() {
   print(aniadirProductos(productos, productoAniadir, precio));
   mostrarProductos(productos);
   print('-----Ejercicio 4-----');
+  Queue<String> tareas = Queue.from(["Lavar platos", "Hacer compra", "Estudiar"]);
+  String tarea = "Pasear perro";
+  print(tareas);
+  print(tareas.removeFirst());
+  print(aniadirTareas(tareas, tarea));
+  print(tareas);
   print('-----Ejercicio 5-----');
+  SplayTreeSet<int> numeros = SplayTreeSet<int>();
+  List<int> nuevosNumeros = [5, 3, 9, 1, 4];
+  print(aniadirNumeros(numeros, nuevosNumeros));
+  numeros.remove(3);
+  print(numeros);
 }
