@@ -171,7 +171,9 @@ Envía una lista de nombres a un isolate.
 - Devuelve la lista al main.
  */
 
- 
+import 'dart:isolate';
+
+
 
 /**
 Ejercicio 9: Isolate con múltiples mensajes
