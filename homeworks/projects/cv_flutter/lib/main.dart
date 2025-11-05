@@ -332,7 +332,6 @@ class CVScreen extends StatelessWidget {
                                           '• Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet sem nec risus egestas accumsan. In enim nunc, tincidunt ut quam eget, luctus sollicitudin neque.',
                                           width,
                                           height,
-                                          isLast: true,
                                         ),
                                       ],
                                     ),
@@ -394,7 +393,7 @@ class CVScreen extends StatelessWidget {
                           left: photoSize / 2 + width * 0.03,
                           right: width * 0.04,
                         ),
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.center,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -421,7 +420,7 @@ class CVScreen extends StatelessWidget {
                                   fontFamily: 'Poppins',
                                   fontSize: 14,
                                   letterSpacing: 1.5,
-                                  color: Colors.white70,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),
@@ -591,9 +590,8 @@ class CVScreen extends StatelessWidget {
     String company,
     String description,
     double width,
-    double height, {
-    bool isLast = false,
-  }) {
+    double height,
+  ) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -608,12 +606,11 @@ class CVScreen extends StatelessWidget {
                 border: Border.all(color: const Color(0xFF2C3E50), width: 2),
               ),
             ),
-            if (!isLast)
-              Container(
-                width: 2,
-                height: height * 0.11,
-                color: Colors.grey[300],
-              ),
+            Container(
+              width: 2,
+              height: height * 0.09,
+              color: Colors.grey[300],
+            ),
           ],
         ),
         SizedBox(width: width * 0.018),
