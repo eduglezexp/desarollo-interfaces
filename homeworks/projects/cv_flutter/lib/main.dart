@@ -4,11 +4,8 @@ void main() {
   runApp(const CVApp());
 }
 
-// Constantes de diseño
 class CVConstants {
   static const a4Ratio = 297 / 210;
-  
-  // Proporciones
   static const leftColumnWidth = 0.35;
   static const photoSizeRatio = 0.16;
   static const headerHeightRatio = 0.11;
@@ -36,9 +33,9 @@ class CVTheme {
     onError: Colors.white,
     surface: Colors.white,
     onSurface: Color(0xFF23232A),
-    surfaceContainerHighest: Color(0xFFE7E8E6), // sidebar background
-    outline: Color(0xFFC7C8CA), // skill bars background
-    outlineVariant: Color(0xFF464A4E), // reference details
+    surfaceContainerHighest: Color(0xFFE7E8E6),
+    outline: Color(0xFFC7C8CA),
+    outlineVariant: Color(0xFF464A4E),
   );
 
   static const TextTheme _textTheme = TextTheme(
@@ -478,7 +475,6 @@ class ProfilePhoto extends StatelessWidget {
   }
 }
 
-// Widgets reutilizables
 class SectionTitle extends StatelessWidget {
   final String title;
   final double width;
@@ -735,7 +731,7 @@ class ContactInfo extends StatelessWidget {
             SizedBox(width: dimensions.width * 0.04),
             ContactInfoIcon(
               icon: Icons.location_on,
-              text: '123 Anywhere St., Any City, ST 12345',
+              text: '123     Anywhere     St.,     Any City, ST 12345',
               dimensions: dimensions,
             ),
           ],
